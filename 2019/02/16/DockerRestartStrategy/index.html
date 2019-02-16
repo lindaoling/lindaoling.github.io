@@ -1,94 +1,153 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  <meta http-equiv="”Cache-Control”" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <title>Docker Restart ���� | Hexo</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.icon">
-  
-
-
-
-<link rel="stylesheet" href="/./vendor.ec1199.css"><link rel="stylesheet" href="/./app.5ed5af.css">
-
-
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Hexo</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
 </head>
-  <body>
-    <header class="main-header">
-  <div class="container">
-    <a href="/" " class="logo">
-      <img src="http://oe54phg1r.bkt.clouddn.com/blog/2017-07-26-075816.jpg" alt="Hexo" class="logo-img">
-    </a>
-    <span class="nav-separator"></span>
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索文章"><input type="hidden" name="sitesearch" value="https://lindaoling.github.io"></form>
-    <a href="javascript:void(0);" class="nav-icon">
-      <i class="fas fa-bars"></i>
-    </a>
-    <nav class="main-nav">
-      <ul class="nav-list">
-        
-          <li class="nav-link ">
-            <a href="/">首页</a>
-          </li>
-        
-          <li class="nav-link ">
-            <a href="/archives/">归档</a>
-          </li>
-        
-          <li class="nav-link ">
-            <a href="/categories">分类</a>
-          </li>
-        
-          <li class="nav-link ">
-            <a href="/about">关于</a>
-          </li>
-        
-      </ul>
-    </nav>
-  </div>
-</header>
-    <div class="page--article">
-  
-    <div class="toc-container">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Restart����"><span class="toc-number">1.</span> <span class="toc-text">Restart����</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker֧������restart���ԣ�"><span class="toc-number">2.</span> <span class="toc-text">Docker֧������restart���ԣ�</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#no"><span class="toc-number">2.1.</span> <span class="toc-text">no</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#on-failure-max-retries"><span class="toc-number">2.2.</span> <span class="toc-text">on-failure[:max-retries]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unless-stopped"><span class="toc-number">2.3.</span> <span class="toc-text">unless-stopped</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#always"><span class="toc-number">2.4.</span> <span class="toc-text">always</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#�����ӳ�"><span class="toc-number">3.</span> <span class="toc-text">�����ӳ�</span></a></li></ol>
-      <div class="toc-tip">Table of Contents ▼</div>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link">
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
     </div>
-  
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">John Doe's Blog</a>
+        </div>
 
-
-  <div class="container">
-    <article>
-      <h1>Docker Restart ����</h1>
-      <h3 id="Restart����"><a href="#Restart����" class="headerlink" title="Restart����"></a>Restart����</h3><p>ʹ��<code>-�Crestart</code>��������ָ��һ��restart����,��ָʾ���˳�ʱ����Ӧ����������Ӧ������<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=always ...</span><br></pre></td></tr></table></figure></p>
-<p>����������restart����ʱ��������docker ps��ʾUp����Restarting״̬��Ҳ����ʹ��docker events��������Ч�е�restart���ԡ�</p>
-<h3 id="Docker֧������restart���ԣ�"><a href="#Docker֧������restart���ԣ�" class="headerlink" title="Docker֧������restart���ԣ�"></a>Docker֧������restart���ԣ�</h3><h4 id="no"><a href="#no" class="headerlink" title="no"></a><code>no</code></h4><p>�����˳����Զ�����,Ĭ��ֵ</p>
-<h4 id="on-failure-max-retries"><a href="#on-failure-max-retries" class="headerlink" title="on-failure[:max-retries]"></a><code>on-failure[:max-retries]</code></h4><p>ֻ�������Է�0״̬���˳�ʱ����,�������������</p>
-<h4 id="unless-stopped"><a href="#unless-stopped" class="headerlink" title="unless-stopped"></a><code>unless-stopped</code></h4><p>ʼ������������������daemon���ǣ������Ѿ���ֹͣ״̬����Ҫ��������</p>
-<h4 id="always"><a href="#always" class="headerlink" title="always"></a><code>always</code></h4><p>ʼ������������docker daemon ��һֱ��������������ֱ���ɹ������������������ø�ֵ</p>
-<h3 id="�����ӳ�"><a href="#�����ӳ�" class="headerlink" title="�����ӳ�"></a>�����ӳ�</h3><p>������ÿ���������ӳ�����һ�ε�˫����ͨ���� 100ms,200ms, 400ms, 800ms,… ֱ������ <code>on-failure</code> ���� docker �˳�������������ɾ��������ɹ����û������ӳ�</p>
-<p>�鿴�������<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &quot;&#123;&#123; .RestartCount &#125;&#125;&quot; container-name</span><br></pre></td></tr></table></figure></p>
-<p>���߻�ȡ��һ����������ʱ�䣺<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &quot;&#123;&#123; .State.StartedAt &#125;&#125;&quot; container-name</span><br></pre></td></tr></table></figure></p>
-
-  </article>
-    
-  </div>
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">Docker Restart 策略</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-02-16</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Restart策略"><span class="toc-text">Restart策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker支持如下restart策略："><span class="toc-text">Docker支持如下restart策略：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#no"><span class="toc-text">no</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#on-failure-max-retries"><span class="toc-text">on-failure[:max-retries]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unless-stopped"><span class="toc-text">unless-stopped</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#always"><span class="toc-text">always</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启延迟"><span class="toc-text">重启延迟</span></a></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
 </div>
+        <div class="post-content">
+            <h3 id="Restart策略"><a href="#Restart策略" class="headerlink" title="Restart策略"></a>Restart策略</h3><p>使用<code>-–restart</code>参数可以指定一个restart策略,来指示在退出时容器应该如何重启或不应该重启。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=always ...</span><br></pre></td></tr></table></figure></p>
+<p>当容器启用restart策略时，将会在docker ps显示Up或者Restarting状态。也可以使用docker events命令来生效中的restart策略。</p>
+<h3 id="Docker支持如下restart策略："><a href="#Docker支持如下restart策略：" class="headerlink" title="Docker支持如下restart策略："></a>Docker支持如下restart策略：</h3><h4 id="no"><a href="#no" class="headerlink" title="no"></a><code>no</code></h4><p>容器退出不自动重启,默认值</p>
+<h4 id="on-failure-max-retries"><a href="#on-failure-max-retries" class="headerlink" title="on-failure[:max-retries]"></a><code>on-failure[:max-retries]</code></h4><p>只在容器以非0状态码退出时重启,可配置重启次数</p>
+<h4 id="unless-stopped"><a href="#unless-stopped" class="headerlink" title="unless-stopped"></a><code>unless-stopped</code></h4><p>始终重启容器，不过当daemon启动是，容器已经是停止状态，不要尝试启动它</p>
+<h4 id="always"><a href="#always" class="headerlink" title="always"></a><code>always</code></h4><p>始终重启容器，docker daemon 会一直尝试重启容器，直至成功，生产环境建议配置该值</p>
+<h3 id="重启延迟"><a href="#重启延迟" class="headerlink" title="重启延迟"></a>重启延迟</h3><p>容器的每次重启尝试延迟是上一次的双倍，通常是 100ms,200ms, 400ms, 800ms,… 直到超过 <code>on-failure</code> 或者 docker 退出，或者容器被删除，重启成功后让会重置延迟</p>
+<p>查看重启次数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &quot;&#123;&#123; .RestartCount &#125;&#125;&quot; container-name</span><br></pre></td></tr></table></figure></p>
+<p>或者获取上一次容器重启时间：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &quot;&#123;&#123; .State.StartedAt &#125;&#125;&quot; container-name</span><br></pre></td></tr></table></figure></p>
 
-    <footer class="main-footer">
-  <div class="container">
-    © 2018 
-  </div>
-</footer>
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+        
+            <a class="next" href="/2019/02/16/hello-world/">
+                <span class="nav-default">Hello World</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
     
 
+    
 
+    
 
-<script src="/./runtime.32f029.js"></script><script src="/./vendor.ec1199.js"></script><script src="/./app.5ed5af.js"></script>
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin">John Doe</a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
 
-
-  </body>
+</script>
 </html>

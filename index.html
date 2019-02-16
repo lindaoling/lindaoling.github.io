@@ -1,112 +1,166 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  <meta http-equiv="”Cache-Control”" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <title>Hexo</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.icon">
-  
-
-
-
-<link rel="stylesheet" href="/./vendor.ec1199.css"><link rel="stylesheet" href="/./app.5ed5af.css">
-
-
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Hexo</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
 </head>
-  <body>
-    <header class="main-header">
-  <div class="container">
-    <a href="/" " class="logo">
-      <img src="http://oe54phg1r.bkt.clouddn.com/blog/2017-07-26-075816.jpg" alt="Hexo" class="logo-img">
-    </a>
-    <span class="nav-separator"></span>
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索文章"><input type="hidden" name="sitesearch" value="https://lindaoling.github.io"></form>
-    <a href="javascript:void(0);" class="nav-icon">
-      <i class="fas fa-bars"></i>
-    </a>
-    <nav class="main-nav">
-      <ul class="nav-list">
-        
-          <li class="nav-link active">
-            <a href="/">首页</a>
-          </li>
-        
-          <li class="nav-link ">
-            <a href="/archives/">归档</a>
-          </li>
-        
-          <li class="nav-link ">
-            <a href="/categories">分类</a>
-          </li>
-        
-          <li class="nav-link ">
-            <a href="/about">关于</a>
-          </li>
-        
-      </ul>
-    </nav>
-  </div>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link">
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
 </header>
-      
-  
-    <div class="page--article-list">
-      <div class="container">
-        <ul class="article-list">
-        
-          <li>
-            <a href="/2019/02/16/DockerRestartStrategy/">
-              <h2 class="title">
-                Docker Restart ����
-                <small>2019.02.16</small>
-              </h2>
-            </a>
-            <div class="excerpt"></div>
-              <footer class="article-footer">
-                <div class="tags">
-                  
-                </div>
-              </footer>
-          </li>
-        
-          <li>
-            <a href="/2019/02/16/hello-world/">
-              <h2 class="title">
-                Hello World
-                <small>2019.02.16</small>
-              </h2>
-            </a>
-            <div class="excerpt"></div>
-              <footer class="article-footer">
-                <div class="tags">
-                  
-                </div>
-              </footer>
-          </li>
-        
-      </ul>
-      </div>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">John Doe's Blog</a>
+        </div>
 
     </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    
+        <article class="post-abstract">
+            <div class="post-title">
+                <h2><a class="post-title-link" href="/2019/02/16/DockerRestartStrategy/">Docker Restart 策略</a></h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time">2019-02-16</span>
+                
+            </div>
+            <div class="post-content">
+                
+                    <h3 id="Restart策略"><a href="#Restart策略" class="headerlink" title="Restart策略"></a>Restart策略</h3><p>使用<code>-–restart</code>参数可以指定一个restart策略,来指示在退出时容器应该如何重启或不应该重启。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=always ...</span><br></pre></td></tr></table></figure></p>
+<p>当容器启用restart策略时，将会在docker ps显示Up或者Restarting状态。也可以使用docker events命令来生效中的restart策略。</p>
+<h3 id="Docker支持如下restart策略："><a href="#Docker支持如下restart策略：" class="headerlink" title="Docker支持如下restart策略："></a>Docker支持如下restart策略：</h3><h4 id="no"><a href="#no" class="headerlink" title="no"></a><code>no</code></h4><p>容器退出不自动重启,默认值</p>
+<h4 id="on-failure-max-retries"><a href="#on-failure-max-retries" class="headerlink" title="on-failure[:max-retries]"></a><code>on-failure[:max-retries]</code></h4><p>只在容器以非0状态码退出时重启,可配置重启次数</p>
+<h4 id="unless-stopped"><a href="#unless-stopped" class="headerlink" title="unless-stopped"></a><code>unless-stopped</code></h4><p>始终重启容器，不过当daemon启动是，容器已经是停止状态，不要尝试启动它</p>
+<h4 id="always"><a href="#always" class="headerlink" title="always"></a><code>always</code></h4><p>始终重启容器，docker daemon 会一直尝试重启容器，直至成功，生产环境建议配置该值</p>
+<h3 id="重启延迟"><a href="#重启延迟" class="headerlink" title="重启延迟"></a>重启延迟</h3><p>容器的每次重启尝试延迟是上一次的双倍，通常是 100ms,200ms, 400ms, 800ms,… 直到超过 <code>on-failure</code> 或者 docker 退出，或者容器被删除，重启成功后让会重置延迟</p>
+<p>查看重启次数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &quot;&#123;&#123; .RestartCount &#125;&#125;&quot; container-name</span><br></pre></td></tr></table></figure></p>
+<p>或者获取上一次容器重启时间：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &quot;&#123;&#123; .State.StartedAt &#125;&#125;&quot; container-name</span><br></pre></td></tr></table></figure></p>
+
+                
+            </div>
+        </article>
+    
+        <article class="post-abstract">
+            <div class="post-title">
+                <h2><a class="post-title-link" href="/2019/02/16/hello-world/">Hello World</a></h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time">2019-02-16</span>
+                
+            </div>
+            <div class="post-content">
+                
+                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+                
+            </div>
+        </article>
+    
+</div>
+<div class="paginator">
+    
+        
+        
+    
+</div>
+
+    </div>
+</div>
+<footer class="footer-social">
+    
 
     
-  
 
+    
 
-    <footer class="main-footer">
-  <div class="container">
-    © 2018 
-  </div>
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin">John Doe</a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
 </footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
     
 
-
-
-<script src="/./runtime.32f029.js"></script><script src="/./vendor.ec1199.js"></script><script src="/./app.5ed5af.js"></script>
-
-
-  </body>
+</script>
 </html>
