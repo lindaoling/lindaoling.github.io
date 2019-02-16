@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta http-equiv="”Cache-Control”" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Docker Restart ���� | Hexo</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.icon">
+  
+
+
+
+<link rel="stylesheet" href="/./vendor.ec1199.css"><link rel="stylesheet" href="/./app.5ed5af.css">
+
+
+</head>
+  <body>
+    <header class="main-header">
+  <div class="container">
+    <a href="/" " class="logo">
+      <img src="http://oe54phg1r.bkt.clouddn.com/blog/2017-07-26-075816.jpg" alt="Hexo" class="logo-img">
+    </a>
+    <span class="nav-separator"></span>
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索文章"><input type="hidden" name="sitesearch" value="https://lindaoling.github.io"></form>
+    <a href="javascript:void(0);" class="nav-icon">
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav class="main-nav">
+      <ul class="nav-list">
+        
+          <li class="nav-link ">
+            <a href="/">首页</a>
+          </li>
+        
+          <li class="nav-link ">
+            <a href="/archives/">归档</a>
+          </li>
+        
+          <li class="nav-link ">
+            <a href="/categories">分类</a>
+          </li>
+        
+          <li class="nav-link ">
+            <a href="/about">关于</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="page--article">
+  
+    <div class="toc-container">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Restart����"><span class="toc-number">1.</span> <span class="toc-text">Restart����</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker֧������restart���ԣ�"><span class="toc-number">2.</span> <span class="toc-text">Docker֧������restart���ԣ�</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#no"><span class="toc-number">2.1.</span> <span class="toc-text">no</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#on-failure-max-retries"><span class="toc-number">2.2.</span> <span class="toc-text">on-failure[:max-retries]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unless-stopped"><span class="toc-number">2.3.</span> <span class="toc-text">unless-stopped</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#always"><span class="toc-number">2.4.</span> <span class="toc-text">always</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#�����ӳ�"><span class="toc-number">3.</span> <span class="toc-text">�����ӳ�</span></a></li></ol>
+      <div class="toc-tip">Table of Contents ▼</div>
+    </div>
+  
+
+
+  <div class="container">
+    <article>
+      <h1>Docker Restart ����</h1>
+      <h3 id="Restart����"><a href="#Restart����" class="headerlink" title="Restart����"></a>Restart����</h3><p>ʹ��<code>-�Crestart</code>��������ָ��һ��restart����,��ָʾ���˳�ʱ����Ӧ����������Ӧ������<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=always ...</span><br></pre></td></tr></table></figure></p>
+<p>����������restart����ʱ��������docker ps��ʾUp����Restarting״̬��Ҳ����ʹ��docker events��������Ч�е�restart���ԡ�</p>
+<h3 id="Docker֧������restart���ԣ�"><a href="#Docker֧������restart���ԣ�" class="headerlink" title="Docker֧������restart���ԣ�"></a>Docker֧������restart���ԣ�</h3><h4 id="no"><a href="#no" class="headerlink" title="no"></a><code>no</code></h4><p>�����˳����Զ�����,Ĭ��ֵ</p>
+<h4 id="on-failure-max-retries"><a href="#on-failure-max-retries" class="headerlink" title="on-failure[:max-retries]"></a><code>on-failure[:max-retries]</code></h4><p>ֻ�������Է�0״̬���˳�ʱ����,�������������</p>
+<h4 id="unless-stopped"><a href="#unless-stopped" class="headerlink" title="unless-stopped"></a><code>unless-stopped</code></h4><p>ʼ������������������daemon���ǣ������Ѿ���ֹͣ״̬����Ҫ��������</p>
+<h4 id="always"><a href="#always" class="headerlink" title="always"></a><code>always</code></h4><p>ʼ������������docker daemon ��һֱ��������������ֱ���ɹ������������������ø�ֵ</p>
+<h3 id="�����ӳ�"><a href="#�����ӳ�" class="headerlink" title="�����ӳ�"></a>�����ӳ�</h3><p>������ÿ���������ӳ�����һ�ε�˫����ͨ���� 100ms,200ms, 400ms, 800ms,… ֱ������ <code>on-failure</code> ���� docker �˳�������������ɾ��������ɹ����û������ӳ�</p>
+<p>�鿴�������<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &quot;&#123;&#123; .RestartCount &#125;&#125;&quot; container-name</span><br></pre></td></tr></table></figure></p>
+<p>���߻�ȡ��һ����������ʱ�䣺<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &quot;&#123;&#123; .State.StartedAt &#125;&#125;&quot; container-name</span><br></pre></td></tr></table></figure></p>
+
+  </article>
+    
+  </div>
+</div>
+
+    <footer class="main-footer">
+  <div class="container">
+    © 2018 
+  </div>
+</footer>
+    
+
+
+
+<script src="/./runtime.32f029.js"></script><script src="/./vendor.ec1199.js"></script><script src="/./app.5ed5af.js"></script>
+
+
+  </body>
+</html>
