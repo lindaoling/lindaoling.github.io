@@ -3,6 +3,12 @@ title: Docker Restart 策略
 date: 2019-02-16 15:09:53
 tags:
 ---
+
+使用 `-–restart`参数可以指定一个restart策略,来指示在退出时容器应该如何重启或不应该重启
+
+<!-- more -->
+
+
 ### Restart策略
 
 使用`-–restart`参数可以指定一个restart策略,来指示在退出时容器应该如何重启或不应该重启。
