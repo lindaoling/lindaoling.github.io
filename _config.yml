@@ -75,7 +75,8 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 # theme: hexo-theme-laughing
-theme: hexo-theme-ele
+# theme: hexo-theme-ele
+theme: sky
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
